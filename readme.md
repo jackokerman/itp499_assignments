@@ -1,1 +1,1 @@
-Repository that will be used to store my ITP-499 assignements.
+This is the repository that will be used to store my ITP-499 assignements.
