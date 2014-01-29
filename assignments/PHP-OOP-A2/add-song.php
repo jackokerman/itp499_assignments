@@ -14,11 +14,9 @@ require_once 'classes/GenreMenu.php';
 
 $artistQuery = new ArtistQuery($pdo);
 $artists = $artistQuery->getAll();
-//var_dump($artists);
 
 $genreQuery = new GenreQuery($pdo);
 $genres = $genreQuery->getAll();
-//var_dump($genres);
 
 ?>
 

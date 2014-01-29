@@ -47,9 +47,6 @@ class Song {
         $statement->bindParam(4, $this->price);
 
         $response = $statement->execute();
-
-        var_dump($response);
-
         $this->id = $this->pdo->lastInsertId();
 
         return $response;
