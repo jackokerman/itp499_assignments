@@ -53,35 +53,37 @@ if (is_null($session->get("loginTime"))) {
         </div>
         <h2 class="text-center">Songs</h2>
         <div class="row">
-            <table class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Artist</th>
-                    <th>Genre</th>
-                    <th>Price</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                $songQuery = new ITP\Songs\SongQuery(Utilites::getPDO());
-                $songs = $songQuery
-                    ->withArtist()
-                    ->withGenre()
-                    ->orderBy('title')
-                    ->all();
+            <div class="col-md-12 col-lg-12">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>Genre</th>
+                        <th>Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $songQuery = new ITP\Songs\SongQuery(Utilites::getPDO());
+                    $songs = $songQuery
+                        ->withArtist()
+                        ->withGenre()
+                        ->orderBy('title')
+                        ->all();
 
-                foreach($songs as $song) {
-                    echo "<tr>
+                    foreach($songs as $song) {
+                        echo "<tr>
                             <td>{$song['title']}</td>
                             <td>{$song['artist_name']}</td>
                             <td>{$song['genre']}</td>
                             <td>{$song['price']}</td>
                          </tr>";
-                }
-                ?>
-                </tbody>
-            </table>
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </body>
